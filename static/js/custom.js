@@ -13,29 +13,6 @@
 		document.getElementById("loading").style.display = "none"; 
 	}
 
-    /*--------------------
-        * Menu Close
-    ----------------------*/
-    THE.MenuClose = function(){
-      $('.navbar-nav .nav-link').on('click', function() {
-       var toggle = $('.navbar-toggler').is(':visible');
-       if (toggle) {
-         $('.navbar-collapse').collapse('hide');
-       }
-      });
-    }
-
-
-	THE.MegaMenu = function() {
-		var mDropdown = $(".px-nav-toggle") 
-		mDropdown.on("click", function() {
-	        $(this).parent().toggleClass("open-menu-parent");
-	        $(this).next('ul').toggleClass("open-menu");
-	        $(this).toggleClass("open");
-	    });
-	}
-
-
 	/* ---------------------------------------------- /*
 	 * Header Fixed
 	/* ---------------------------------------------- */
@@ -48,24 +25,6 @@
 	       $('header').removeClass('fixed-header');
 	    }
 	}
-
-	/*--------------------
-        * One Page
-    ----------------------*/
-    THE.OnePage = function(){
-        $('header a[href*="#"]:not([href="#"]), .go-to a[href*="#"]:not([href="#"])').on('click', function() {
-            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') || location.hostname == this.hostname) {
-              var target = $(this.hash);
-                  target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-                  if (target.length) {
-                    $('html,body').animate({
-                      scrollTop: target.offset().top - 70,
-                      }, 1000);
-                      return false;
-                  }
-            }
-        });
-    }
 
 	/* ---------------------------------------------- /*
 	 * All Functions

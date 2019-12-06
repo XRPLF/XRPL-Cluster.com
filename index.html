@@ -46,7 +46,7 @@
     <!-- End Preload -->
 
     <!-- Header -->
-    <header class="header-nav header-white">
+    <header class="header-nav header-white" style="position:relative;z-index:1000;">
         <div class="fixed-header-bar">
             <div class="container container-large">
                 <div class="navbar navbar-default main-navbar" style="min-height: 60px;">
@@ -80,7 +80,7 @@
                         <p class="font-1 font-w-400 white-color-light">
                             High available, low latency &amp; geographic routing. Provided by trusted XRP community members.
                         </p>
-                        <div class="btn-bar p-25px-t">
+                        <div class="btn-bar p-25px-t" style="position: relative; z-index:999;">
                             <a class="m-btn m-btn-theme2nd m-btn-radius" href="#start">Start now</a>
                         </div>
                     </div>
@@ -91,15 +91,13 @@
             </div>
         </section>
         <!-- End Home Banner -->
-
-
-        <!-- Section -->
         <a name="start"></a>
+        <!-- Section -->
         <section class="section">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-12 m-15px-tb">
-                        <h3 class="h1 font-w-600 dark-color m-20px-b p-20px-b theme-after after-50px">
+                        <h3 class="h1 font-w-600 dark-color m-20px-b p-20px-b theme-after after-50px pt-4">
                             Connect to
                             <code style="position: relative; top: -5px;" class="badge alert-warning">wss://xrpl.ws</code>
                         </h3>
@@ -352,6 +350,6 @@ return await new Promise((resolve, reject) => {
     <!-- End Main -->
     <script src="static/js/jquery-3.2.1.min.js"></script>
     <script src="static/plugin/bootstrap/js/bootstrap.js"></script>
-    <script src="static/js/custom.js"></script>
+    <script src="static/js/custom.js?x2"></script>
 </body>
 </html>
