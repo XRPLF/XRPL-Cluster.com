@@ -14,7 +14,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <!-- plugin CSS -->
     <link href="static/plugin/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="static/plugin/font-awesome/css/all.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/6d824f526e.js" crossorigin="anonymous"></script>
     <link href="static/plugin/et-line/style.css" rel="stylesheet">
     <!-- theme css -->
     <link href="static/style/master.css" rel="stylesheet">
@@ -78,8 +78,25 @@
                         <h3><code class="badge alert-warning">wss://xrpl.ws</code></h3>
                         <h1 class="white-color display-4 m-20px-b">XRP ledger full history cluster</h1>
                         <p class="font-1 font-w-400 white-color-light">
-                            High available, low latency &amp; geographic routing. Provided by trusted XRP community members.
+                            <b>High available, low latency &amp; geographic routing. Provided by trusted XRP community members.</b>
                         </p>
+                        <div class="pr-5 mr-5">
+                            <ul class="fa-ul py-1 border-radius-6 text-white">
+                                <li>
+                                    <span class="fa-li"><i class="mr-1 text-danger fa-fw fw  fas fa-shield-check"></i></span>
+                                    Filters out transactions set to verified scam accounts using
+                                    <a href="https://xrplorer.com/forensics/about" class="text-white" target="_blank"><b><u>XRP Forensics</u></b></a> 
+                                </li>
+                                <li>
+                                    <span class="fa-li"><i class="mr-1 text-warning fa-fw fw  fas fa-shield-check"></i></span>
+                                    Filters out transactions with unnecessary high transaction fee (&gt; 1 XRP)
+                                </li>
+                                <li>
+                                    <span class="fa-li"><i class="mr-1 text-success fa-fw fw fas fa-server"></i></span>
+                                    Seamless node failover without having to reconnect the WebSocket
+                                </li>
+                            </ul>
+                        </div>
                         <div class="btn-bar p-25px-t" style="position: relative; z-index:999;">
                             <a class="m-btn m-btn-theme2nd m-btn-radius" href="#start">Start now</a>
                         </div>
