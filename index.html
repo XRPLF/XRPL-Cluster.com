@@ -83,17 +83,22 @@
                         <div class="pr-5 mr-5">
                             <ul class="fa-ul py-1 border-radius-6 text-white">
                                 <li>
-                                    <span class="fa-li"><i class="mr-1 text-danger fa-fw fw  fas fa-shield-check"></i></span>
+                                    <span class="fa-li fa-lg"><i class="mr-1 text-danger fa-fw fw  fas fa-shield-check"></i></span>
                                     Filters out transactions set to verified scam accounts using
                                     <a href="https://xrplorer.com/forensics/about" class="text-white" target="_blank"><b><u>XRP Forensics</u></b></a> 
                                 </li>
                                 <li>
-                                    <span class="fa-li"><i class="mr-1 text-warning fa-fw fw  fas fa-shield-check"></i></span>
+                                    <span class="fa-li fa-lg"><i class="mr-1 text-warning fa-fw fw  fas fa-shield-check"></i></span>
                                     Filters out transactions with unnecessary high transaction fee (&gt; 2 XRP)
                                 </li>
                                 <li>
-                                    <span class="fa-li"><i class="mr-1 text-success fa-fw fw fas fa-server"></i></span>
+                                    <span class="fa-li fa-lg"><i class="mr-1 text-success fa-fw fw fas fa-server"></i></span>
                                     Seamless node failover without having to reconnect the WebSocket
+                                </li>
+                                <li>
+                                    <span class="fa-li fa-lg"><i class="mr-1 text-white fa-fw fw fas fa-route"></i></span>
+                                    Automatic routing of <code class="bg-light px-1 rounded text-muted">submit</code> transactions to a
+                                    dedicated (lowest fee) XRPL node pool.
                                 </li>
                             </ul>
                         </div>
