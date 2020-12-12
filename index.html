@@ -14,7 +14,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <!-- plugin CSS -->
     <link href="static/plugin/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/6d824f526e.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/ae7120c5ba.js" crossorigin="anonymous"></script>
     <link href="static/plugin/et-line/style.css" rel="stylesheet">
     <!-- theme css -->
     <link href="static/style/master.css" rel="stylesheet">
@@ -338,24 +338,54 @@ return await new Promise((resolve, reject) => {
             <div class="container">
                 <div class="row counter">
                     <div class="col-6 col-md-6 col-lg-3 m-15px-tb text-center">
-                        <div class="count white-color h1 font-w-600" data-to="650" data-speed="650">7</div>
+                        <div class="count white-color h1 font-w-600" data-to="650" data-speed="650" id="pops">
+                            <div class="d-inline-block text-center" style="position: relative; font-size: .7em; margin: 0; padding: 0; line-height: .7em; width: 1em; height: 1em; top: -5px; left: 0px;">
+                                <i style="margin: 0; padding: 0; top: 0; left: 0;" class="fa-spin fal fa-spinner-third fa-fw"></i>
+                            </div>
+                        </div>
                         <h6 class="white-color-light after-50px white-after p-20px-b m-0px">Points of presence</h6>
                     </div>
                     <div class="col-6 col-md-6 col-lg-3 m-15px-tb text-center">
-                        <div class="count white-color h1 font-w-600" data-to="987" data-speed="987">&gt; 59MM</div>
+                        <div class="count white-color h1 font-w-600" data-to="987" data-speed="987">&gt; <span id="ledgers">
+                            <div class="d-inline-block text-center" style="position: relative; font-size: .7em; margin: 0; padding: 0; line-height: .7em; width: 1em; height: 1em; top: -5px; left: 0px;">
+                                <i style="margin: 0; padding: 0; top: 0; left: 0;" class="fa-spin fal fa-spinner-third fa-fw"></i>
+                            </div>
+                        </span>MM</div>
                         <h6 class="white-color-light after-50px white-after p-20px-b m-0px">Available ledgers</h6>
                     </div>
                     <div class="col-6 col-md-6 col-lg-3 m-15px-tb text-center">
-                        <div class="count white-color h1 font-w-600" data-to="350" data-speed="350">4+</div>
+                        <div class="count white-color h1 font-w-600" data-to="350" data-speed="350"><span id="nodes">
+                            <div class="d-inline-block text-center" style="position: relative; font-size: .7em; margin: 0; padding: 0; line-height: .7em; width: 1em; height: 1em; top: -5px; left: 0px;">
+                                <i style="margin: 0; padding: 0; top: 0; left: 0;" class="fa-spin fal fa-spinner-third fa-fw"></i>
+                            </div>
+                        </span>+</div>
                         <h6 class="white-color-light after-50px white-after p-20px-b m-0px">Full history nodes</h6>
                     </div>
                     <div class="col-6 col-md-6 col-lg-3 m-15px-tb text-center">
-                        <div class="count white-color h1 font-w-600" data-to="850" data-speed="850">&gt; 200TB</div>
+                        <div class="count white-color h1 font-w-600" data-to="850" data-speed="850">&gt; <span id="traff">
+                            <div class="d-inline-block text-center" style="position: relative; font-size: .7em; margin: 0; padding: 0; line-height: .7em; width: 1em; height: 1em; top: -5px; left: 0px;">
+                                <i style="margin: 0; padding: 0; top: 0; left: 0;" class="fa-spin fal fa-spinner-third fa-fw"></i>
+                            </div>
+                        </span>TB</div>
                         <h6 class="white-color-light after-50px white-after p-20px-b m-0px">Yearly traffic</h6>
                     </div>
                 </div>
             </div>
         </section>
+        <script>
+            window.fetch('https://xrpl.ws-stats.com/json/edges').then(function (r) { return r.json() }).then(function (r) {
+                document.getElementById('pops').innerHTML = Object.keys(r).length
+            })
+            window.fetch('https://xrpl.ws-stats.com/json/nodes').then(function (r) { return r.json() }).then(function (r) {
+                document.getElementById('nodes').innerHTML = Object.keys(r).length
+            })
+            window.fetch('https://xrpl.ws-stats.com/json/traffic').then(function (r) { return r.json() }).then(function (r) {
+                document.getElementById('traff').innerHTML = Math.round(r.bandwidth_TB * 12)
+            })
+            window.fetch('https://xrpl.ws', { method: 'POST', body: JSON.stringify({ method: "ledger", "params": [] }) }).then(function (r) { return r.json() }).then(function (r) {
+                document.getElementById('ledgers').innerHTML = r.result.closed.ledger.seqNum.slice(0, -6)
+            })
+        </script>
         <!-- End Section -->
 
     </main>
