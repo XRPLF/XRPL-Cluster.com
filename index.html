@@ -6,10 +6,10 @@
     <meta name="author" content="99pixel" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="keywords" content="xrpl.ws" />
+    <meta name="keywords" content="xrplcluster.com" />
     <meta name="description" content="XRP ledger full history cluster" />
     <!-- title -->
-    <title>wss://xrpl.ws</title>
+    <title>wss://xrplcluster.com</title>
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <!-- plugin CSS -->
@@ -19,10 +19,10 @@
     <!-- theme css -->
     <link href="static/style/master.css" rel="stylesheet">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://xrpl.ws/static/twittercard.png">
+    <meta name="twitter:image" content="https://xrplcluster.com/static/twittercard.png">
     <meta name="twitter:creator" content="@WietseWind">
     <meta name="twitter:description" content="XRP ledger full history cluster">
-    <meta name="twitter:title" content="wss://xrpl.ws">
+    <meta name="twitter:title" content="wss://xrplcluster.com">
     <script>
         function docReady(fn) {
             if (document.readyState === "complete" || document.readyState === "interactive") {
@@ -52,8 +52,8 @@
                 <div class="navbar navbar-default main-navbar" style="min-height: 60px;">
                     <div class="navbar-brand">
                         <a href="index.html" class="logo">
-                            <span class="light-logo text-white" title=""><b>wss://xrpl.ws</b> <small class="mt-0 pt-0 d-none d-sm-inline-block"> # XRPL Full History &amp; tx submission Cluster</small></span>
-                            <span class="dark-logo text-dark" title=""><b>wss://xrpl.ws</b> <small class="mt-0 pt-0 d-none d-sm-inline-block"> # XRPL Full History &amp; tx submission Cluster</small></span>
+                            <span class="light-logo text-white" title=""><b>wss://xrplcluster.com</b> <small class="mt-0 pt-0 d-none d-sm-inline-block"> # XRPL Full History &amp; tx submission Cluster</small></span>
+                            <span class="dark-logo text-dark" title=""><b>wss://xrplcluster.com</b> <small class="mt-0 pt-0 d-none d-sm-inline-block"> # XRPL Full History &amp; tx submission Cluster</small></span>
                         </a>
                     </div>
                     <div class="justify-content-end">
@@ -75,7 +75,7 @@
             <div class="container">
                 <div class="row full-screen align-items-center justify-content-between lg-m-80px-tb">
                     <div class="col-lg-6 m-50px-tb">
-                        <h3><code class="badge alert-warning">wss://xrpl.ws</code></h3>
+                        <h3><code class="badge alert-warning">wss://xrplcluster.com</code></h3>
                         <h1 class="white-color display-4 m-20px-b">XRP ledger full history cluster</h1>
                         <p class="font-1 font-w-400 white-color-light">
                             <b>High available, low latency &amp; geographic routing. Provided by the <a href="https://xrplf.org" class="text-white" target="_blank">XRPLF</a> with support from trusted community members.</b>
@@ -121,12 +121,12 @@
                     <div class="col-lg-12 m-15px-tb">
                         <h3 class="h1 font-w-600 dark-color m-20px-b p-20px-b theme-after after-50px pt-4">
                             Connect to
-                            <code style="position: relative; top: -5px;" class="badge alert-warning">wss://xrpl.ws</code>
+                            <code style="position: relative; top: -5px;" class="badge alert-warning">wss://xrplcluster.com</code>
                             <div class="h4 pl-0 text-">Just like <code class="font-weight-bold" id="many">many</code> other clients 🚀</div>
                         </h3>
                         <p class="font-2">
                             If you want to connect to the XRP ledger using websockets for transaction history or transaction submission, you
-                            can now use the publicly available <code>wss://xrpl.ws</code> endpoint. Based on latency you will be routed
+                            can now use the publicly available <code>wss://xrplcluster.com</code> endpoint. Based on latency you will be routed
                             to the closest, best available full history XRPL node.
                         </p>
                         <div class="text-left row p-10px-t">
@@ -192,7 +192,7 @@
                                 <div class="card text-center shadow-sm mt-3 border-warning alert-warning bg-white">
                                     <div class="card-body py-1">
                                         Please note: for quality purposes, client IP addresses transmitting messages
-                                        to the XRP ledger using <code class="badge alert-warning">wss://xrpl.ws</code>
+                                        to the XRP ledger using <code class="badge alert-warning">wss://xrplcluster.com</code>
                                         may be recorded.
                                     </div>
                                 </div>
@@ -240,7 +240,7 @@
                                         connecting.style.display = 'block'
                                         btn.style.display = 'none'
                                         try {
-                                            socket = new WebSocket("wss://xrpl.ws")
+                                            socket = new WebSocket("wss://xrplcluster.com")
                                             socket.onopen = function (event) {
                                                 socket.send(JSON.stringify({command: 'server_info'}))
                                                 clearInterval(interval)
@@ -304,7 +304,7 @@ const WebSocket = require('ws')
 
 return await new Promise((resolve, reject) => {
     console.log('Connecting')
-    const Client = new WebSocket('wss://xrpl.ws')
+    const Client = new WebSocket('wss://xrplcluster.com')
     
     Client.on('open', e => {
       console.log('Connected, request server_info')
@@ -385,7 +385,7 @@ return await new Promise((resolve, reject) => {
             window.fetch('https://xrpl.ws-stats.com/json/traffic').then(function (r) { return r.json() }).then(function (r) {
                 document.getElementById('traff').innerHTML = Math.round(r.bandwidth_TB * 12)
             })
-            window.fetch('https://xrpl.ws', { method: 'POST', body: JSON.stringify({ method: "ledger", "params": [] }) }).then(function (r) { return r.json() }).then(function (r) {
+            window.fetch('https://xrplcluster.com', { method: 'POST', body: JSON.stringify({ method: "ledger", "params": [] }) }).then(function (r) { return r.json() }).then(function (r) {
                 document.getElementById('ledgers').innerHTML = r.result.closed.ledger.seqNum.slice(0, -6)
             })
             function getClientCount () {
